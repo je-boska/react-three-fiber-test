@@ -20,7 +20,7 @@ export default function Home() {
         <Canvas
           shadows='soft'
           style={{ position: 'absolute', height: '100vh' }}
-          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 3, 5] }}
+          camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 1, 5] }}
         >
           <Environment files='kloppenheim_06_puresky_2k.hdr' background />
           <directionalLight castShadow position={[20, 20, 20]} />

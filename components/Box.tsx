@@ -11,7 +11,7 @@ export default function Box(props: ThreeElements['mesh']) {
   const data = useScroll();
   useFrame((state, delta) => {
     const a = data.range(0, 1);
-    mesh.current.rotation.x = a;
+    mesh.current.rotation.x = a * 2;
   });
 
   return (
