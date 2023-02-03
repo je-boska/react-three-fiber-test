@@ -3,7 +3,7 @@ import { Inter } from '@next/font/google';
 import { Canvas } from '@react-three/fiber';
 import Box from '@/components/Box';
 import Plane from '@/components/Plane';
-import { Environment, OrbitControls } from '@react-three/drei';
+import { Environment, OrbitControls, ScrollControls } from '@react-three/drei';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,12 +23,13 @@ export default function Home() {
           camera={{ fov: 75, near: 0.1, far: 1000, position: [0, 3, 5] }}
         >
           <Environment files='kloppenheim_06_puresky_2k.hdr' background />
-          <OrbitControls />
           <directionalLight castShadow position={[20, 20, 20]} />
           <ambientLight intensity={0.3} />
           <pointLight position={[10, 10, 10]} />
-          <Box castShadow position={[-1.2, 1, 0]} rotation={[0, 2, 1]} />
-          <Box castShadow position={[1.2, 1, 0]} />
+          <ScrollControls pages={3} damping={0.1}>
+            <Box castShadow position={[-1.2, 1, 0]} rotation={[0, 2, 1]} />
+            <Box castShadow position={[1.2, 1, 0]} />
+          </ScrollControls>
           {/* <Plane
             receiveShadow
             position={[0, 0, 0]}
